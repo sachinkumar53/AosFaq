@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>FAQ</title>
+</head>
+
+<body>
+
+<p>This page has a list of frequently asked questions. Tap on a question to view it's solution.</p>
+
+<button class="collapsible">Why this app have ads? How can i remove it?</button>
+<div class="content">
+    <p>To support development, it helps me to keep working on this project.
+        You can remove ads by purchasing pro version of this app.</p>
+</div>
+
+<button class="collapsible">Why this app causing battery drain?</button>
+<div class="content">
+    <p>This app creates an overlay to your lockscreen which keeps the screen awake.
+        To save battery, please disable auto brightness and set screen timeout to lowest.
+        Don't use display mode which uses sensors such as lift to show or wave to show.
+        It is recommended to use notification show or show while charging in order to save
+        battery.</p>
+</div>
+
+<button class="collapsible">Why there is a notification of app running? How can i remove it?
+</button>
+<div class="content">
+    <p>As per the android system, When a service runs in foreground they must show a persistent
+        notification. This app is required to run in foreground to avoid force closed by system.
+        So that you can have an uninterrupted and seamless experience. To disable this notification,
+        long press on the notification and in the opened settings, turn off <b>Allow
+            notifications</b>
+        and turn back it on. It will hide the notification until you restart your device.</p>
+</div>
+
+
+<button class="collapsible">Why the Always On Screen dismisses after few seconds?
+</button>
+<div class="content">
+    <p>To save device battery, the screen timeout option is set to a default value of 15 seconds. To
+        change it goto <b>Display</b> settings of the app and find the screen timeout option then
+        change it as per your choice. <b>If you don't want the Always On Screen to be turn off</b>,
+        You can set the timeout to never. However, it is not recommended at all. <b>Doing this may
+            cause battery drain faster and also can pixels of your screen if it is Amoled type.</b>
+        <span style="color: red;">Do this at your own risk. I'm not responsible if any damage causes to your device.</span>
+    </p>
+</div>
+
+
+<button class="collapsible">How to swipe between widgets?</button>
+<div class="content">
+    <p>Make sure at least one of the widgets is turned on. Turn your screen off and wait for the
+        Always On Screen to show. Now double tap on the clock and then swipe left or right for the
+        widgets. You can't swipe the clock when it is dim. All the touch inputs are disabled to
+        prevent accidental touches. You can enable the interaction whenever you want by just double
+        tapping on the clock. It will automatically disable after 5 seconds of inactivity.</p>
+</div>
+
+
+<button class="collapsible">How to enable fingerprint unlock?</button>
+<div class="content">
+    <p>Go to <b>Miscellaneous</b> option the Always On Screen settings. Enable the fingerprint
+        option. You can change the type of fingerprint scanner you have. <b>If your device has
+            In-display fingerprint scanner, make sure the clock is dim while unlocking.If it's not,
+            wait for few seconds till it dims and then put your finger at the scanner, otherwise the
+            scanner will not work.</b></p>
+</div>
+
+<button class="collapsible">Why doesn't my notification LED light work?</button>
+<div class="content">
+    <p>Notification LED light doesn't lit up when an app is overlaying your lockscreen and keeping
+        your screen turned on.
+        However you can enable notification option within the app to quickly view your
+        notifications.</p>
+</div>
+
+
+<h3>About Permissions: </h3>
+<div class="disclaimer" id="disclaimer">
+    <b>Disclaimer: </b>This app only use the permissions
+    for its respective purposes. It doesn't use any of the granted permission for other means.
+</div>
+
+
+<button class="collapsible">Read calender events</button>
+<div class="content">
+    <p>This permission is used by the app to show
+        your calendar events.</p>
+</div>
+<button class="collapsible">Phone call permission</button>
+<div class="content">
+    <p>This permission is used to detect phone calls.
+        So that the app can hide and deactivate when
+        you are on a phone call. It will turn on
+        automatically, when the call is ended.</p>
+</div>
+<button class="collapsible">Notification access</button>
+<div class="content">
+    <p>This permission is used to show notifications
+        within the app.</p>
+</div>
+<button class="collapsible">Change system settings</button>
+<div class="content">
+    <p>This permission is used to adjust brightness of Always on Screen.</p>
+</div>
+<button class="collapsible">Draw over the apps</button>
+<div class="content">
+    <p>This permission required to overlay your
+        lockscreen.</p>
+</div>
+<p>
+    If you don't find your query on this page.
+    You can always ask it to me. Open the app and
+    Go to <b>About >> Feedback</b>, write your queries
+    and send. I will reply as soon as possible.
+    You can also join our <b>Telegram channel</b> for instant replies.
+    <a href="https://t.me/skappdevelopment">Click this link</a> to join us on Telegram
+</p>
+</body>
+
+
+<script>
+  let collapsibles = document.getElementsByClassName("collapsible");
+
+  for (let i = 0; i < collapsibles.length; i++) {
+    collapsibles[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      let content = this.nextElementSibling;
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  }
+
+  function toggleDarkMode() {
+    let element = document.body;
+    element.classList.toggle("dark-mode");
+
+    let collapsibles = document.getElementsByClassName("collapsible");
+    for (var i = 0; i < collapsibles.length; i++) {
+      collapsibles[i].classList.toggle("collapsible-dark");
+    }
+
+    let contents = document.getElementsByClassName("content");
+    for (var i = 0; i < contents.length; i++) {
+      contents[i].classList.toggle("content-dark");
+    }
+    
+    let disclaimer = document.getElementById("disclaimer");
+    disclaimer.classList.toggle("disclaimer-dark");
+    
+  }
+
+</script>
+
+</html>

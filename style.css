@@ -1,0 +1,72 @@
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 8px;
+  }
+
+  .dark-mode {
+    background-color: #12171B;
+    color: white;
+  }
+
+  .collapsible {
+    width: 100%;
+    background-color: transparent;
+    text-align: left;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    padding: 16px;
+    cursor: pointer;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+
+  .collapsible-dark {
+    color: whitesmoke;
+  }
+
+  .collapsible:hover {
+    background-color: #EEEEEE;
+    color: #4287f5;
+  }
+
+  .collapsible:focus {
+    background-color: #DDDDDD;
+    color: #4287f5;
+  }
+
+  .collapsible-dark:hover {
+    background-color: #1C242B;
+    color: #4287f5;
+  }
+  
+  .collapsible-dark:focus {
+    background-color: #232D35;
+  }
+
+  .content {
+    padding: 0 16px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #EEEEEE;
+  }
+
+  .content-dark {
+    background-color: #2a2a2a;
+  }
+
+  .disclaimer{
+    background-color: #FAE1E1;
+    color: #db1212;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .disclaimer-dark{
+    background-color:#311b1b;
+    color: #ff0000;
+  }
